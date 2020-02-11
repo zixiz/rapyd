@@ -141,7 +141,7 @@ Body Params:
 **"id": String; this is the ID you get from `/api/v1/funds/transfer` API response (mandatory)**
 
 **"status": String; you can only choose between these 3 options:**
-`"status":"accept" , "status":"decline" , "status":"cancel"` 
+`"status":"accept" , "status":"decline" , "status":"cancel"` (mandatory) 
 
 **Response Example:** 
 
