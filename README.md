@@ -21,7 +21,7 @@ Body Params:
 
 `{
     "response": {
-        "phone_number": "+972542985349",
+        "phone_number": "+972542218349",
         "email": "Bigi@gmail.com",
         "first_name": "Bigi",
         "last_name": "Gilad",
@@ -48,9 +48,9 @@ Example of Body Params, must include **_'funds' object_** containing an array of
 
 `{
 	"funds":[
-		{"phone_number": "+972542036569","amount": 100,"currency": "ILS"},
-		{"phone_number": "+972547213309","amount": 100,"currency": "ILS"},
-		{"phone_number": "+972547689309","amount": 100,"currency": "ILS"}
+		{"phone_number": "+972546851569","amount": 100,"currency": "ILS"},
+		{"phone_number": "+972547213354","amount": 100,"currency": "ILS"},
+		{"phone_number": "+972547689985","amount": 100,"currency": "ILS"}
 		]
 }`
 
@@ -66,7 +66,7 @@ Example of Body Params, must include **_'funds' object_** containing an array of
 
 #### Here is an example of adding an individual fund to an eWallet:
 
-`{"funds":[{"phone_number": "+972542036569","amount": 100,"currency": "ILS"}]}`
+`{"funds":[{"phone_number": "+972542036518","amount": 100,"currency": "ILS"}]}`
 
 **Response Example:**
 
@@ -75,7 +75,7 @@ Example of Body Params, must include **_'funds' object_** containing an array of
     "response": {
       "id": "5c2c1ca7-4cd7-11ea-833c-02e199f7f6f5",
       "account_id": "3c17076d-4c0f-11ea-833c-02e199f7f6f5",
-      "phone_number": "+972547689309",
+      "phone_number": "+972547689678",
       "amount": 100,
       "currency": "ILS",
       "metadata": {
@@ -87,7 +87,7 @@ Example of Body Params, must include **_'funds' object_** containing an array of
     "response": {
       "id": "5c2afa27-4cd7-11ea-833c-02e199f7f6f5",
       "account_id": "a09abdb0-4c36-11ea-833c-02e199f7f6f5",
-      "phone_number": "+972522935573",
+      "phone_number": "+972522935582",
       "amount": 161.9,
       "currency": "ILS",
       "metadata": {
@@ -120,7 +120,7 @@ Body Params:
         "status": "PEN",
         "amount": 55,
         "currency_code": "USD",
-        "destination_phone_number": "+972542085469",
+        "destination_phone_number": "+972542565469",
         "transfer_response_at": 0,
         "created_at": 1581448879,
         "metadata": {
@@ -151,7 +151,7 @@ Body Params:
         "status": "CAN",
         "amount": 55.5,
         "currency_code": "USD",
-        "destination_phone_number": "+972542222222",
+        "destination_phone_number": "+972542565469",
         "transfer_response_at": 1581430364,
         "created_at": 1581430213,
         "metadata": {
