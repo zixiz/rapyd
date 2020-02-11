@@ -6,8 +6,8 @@ let promises = [];
 module.exports = function (arr) {
     for (let i = 0; i <arr.length ; i++) {
         let body = arr[i];
-        let healper = headerHelper("post",constatns.URI.ADDED_FUNDS.path,body);
-        promises.push(axios.post(constatns.URI.ADDED_FUNDS.url,body,{headers:{
+        let healper = headerHelper("post",constatns.URI.ADD_FUNDS.path,body);
+        promises.push(axios.post(constatns.URI.ADD_FUNDS.url,body,{headers:{
                 'Content-Type': 'application/json',
                 'signature': healper.signature,
                 'salt':healper.salt,

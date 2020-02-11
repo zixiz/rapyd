@@ -62,7 +62,7 @@ Body Params:
 
 **currency: String; (mandatory) Three-letter ISO 4217 code**
 
-**amount: Integer or Float; (mandatory)** 
+**amount:String; Must be string contain only integer or float`; (mandatory)** 
 
 _here is example If you want add funds to 1 eWallet_
 
