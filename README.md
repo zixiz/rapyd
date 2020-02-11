@@ -2,6 +2,7 @@
 
 The Api is contain 4 POST methods.
 
+
 # Create Ewallet -
 
 `POST /api/v1/ewallet`
@@ -38,6 +39,7 @@ email: String;
     }
 }`
 
+
 # Add Funds -
 
 `POST /api/v1/funds/add`
@@ -52,13 +54,15 @@ Example of Body Params, must include 'funds' object contain array of Add Funds o
 		]
 }`
 
+Body Params:
+
 **Each Add Funds object must contain**
 
 **phone_number: String; Must be in E.164 format (mandatory)**
 
 **currency: String; (mandatory) Three-letter ISO 4217 code**
 
-**amount: String; (mandatory)** 
+**amount: Integer or Float; (mandatory)** 
 
 _here is example If you want add funds to 1 eWallet_
 
@@ -93,6 +97,7 @@ _here is example If you want add funds to 1 eWallet_
   }
 ]`
 
+
 # Transfer Funds Between eWallets-
 
 `POST /api/v1/funds/transfer`
@@ -106,6 +111,7 @@ Body Params:
 **destination_phone_number:  String;  Must be in E.164 format (mandatory)**
 
 **source_phone_number: String;  Must be in E.164 format (mandatory)**
+
 
 # Cancel/Accept/Decline Transfer API-
 

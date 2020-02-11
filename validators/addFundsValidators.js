@@ -1,5 +1,7 @@
 var phoneValid = require('../healpers/phoneCheck');
 var validateCurrencyCode = require('validate-currency-code');
+
+
 let body = [];
 module.exports = function (arr) {
     if(arr.length === 0) return {error:{array:"Must contain array of objects with phone, amount and currency"}};
