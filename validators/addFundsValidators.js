@@ -4,8 +4,8 @@ var validateCurrencyCode = require('validate-currency-code');
 
 let body = [];
 module.exports = function (arr) {
-    if(arr.length === 0) return {error:{array:"Must contain array of objects with phone, amount and currency"}};
-    if(arr.length > 5) return {error:{array:`It seems like you try to add funds to ${arr.length} eWallets, please try add funds less than 5 eWallets`}};
+    if(arr.length === 0) return {error:{array:"Must contain an array of objects with 'phone_number', 'amount' and 'currency'"}};
+    if(arr.length > 5) return {error:{array:`It seems like you tried to add funds to ${arr.length} eWallets, please try to add funds to up to 5 eWallets at a time.`}};
     for (let i = 0; i <arr.length ; i++) {
         if(phoneValid(arr[i].phone_number)){
             let amount = parseFloat(arr[i].amount);
@@ -22,10 +22,10 @@ module.exports = function (arr) {
                     return {error:{currency:'Error with currency symbol, try ISO 4217 currency code'}}
                 }
             }else{
-                return {error:{amount:'Cant minus transfer'}}
+                return {error:{amount:'Can not transfer a negative amount'}}
             }
         }else{
-            return {error:{phone:'No valid phone number, try E.164 format'}}
+            return {error:{phone:'Invalid phone number, try E.164 format'}}
         }
     }
     return body;

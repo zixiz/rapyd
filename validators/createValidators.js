@@ -4,7 +4,7 @@ let body = {};
 module.exports = function (data) {
     if(!phoneValid(data.phone_number)){
         return {error:
-                {phone:'No valid phone number, try E.164 format'}
+                {phone:'Invalid phone number, try E.164 format'}
         };
     }else{
         body.phone_number = data.phone_number;

@@ -1,23 +1,23 @@
-# Rapyd home task
+# Rapyd Home Task
 
-The Api is contain 4 POST methods.
+The Api contains 4 POST methods.
 
 
-# Create Ewallet -
+# Create eWallet -
 
 `POST /api/v1/ewallet`
 
 Body Params:
 
-first_name: String;
+"first_name": String;
 
-last_name: String;
+"last_name": String;
 
-**phone_number: String; Must be in E.164 format (mandatory)**
+**"phone_number": String; Must be in E.164 format (mandatory)**
 
-email: String;
+"email": String;
 
-**Response example:** 
+**Response Example:** 
 
 `{
     "response": {
@@ -44,7 +44,7 @@ email: String;
 
 `POST /api/v1/funds/add`
 
-Example of Body Params, must include 'funds' object contain array of Add Funds objects:
+Example of Body Params, must include **_'funds' object_** containing an array of Add Funds objects:
 
 `{
 	"funds":[
@@ -54,21 +54,21 @@ Example of Body Params, must include 'funds' object contain array of Add Funds o
 		]
 }`
 
-Body Params:
+#### Add Funds objects - Body Params -
 
-**Each Add Funds object must contain**
+**Each Add Funds object must contain:**
 
-**phone_number: String; Must be in E.164 format (mandatory)**
+**""phone_number"": String; Must be in E.164 format (mandatory)**
 
-**currency: String; (mandatory) Three-letter ISO 4217 code**
+**""currency"": String; (mandatory) Three-letter ISO 4217 code**
 
-**amount:String; Must be string contain only integer or float`; (mandatory)** 
+**""amount"":String; (mandatory)** 
 
-_here is example If you want add funds to 1 eWallet_
+#### Here is an example of adding an individual fund to an eWallet:
 
 `{"funds":[{"phone_number": "+972542036569","amount": 100,"currency": "ILS"}]}`
 
-**Response example:**
+**Response Example:**
 
 `[
   {
@@ -104,13 +104,31 @@ _here is example If you want add funds to 1 eWallet_
 
 Body Params:
 
-**amount: String; (mandatory)**
+**"amount": String; (mandatory)**
 
-**currency: String; Three-letter ISO 4217 code (mandatory)**
+**"currency": String; Three-letter ISO 4217 code (mandatory)**
 
-**destination_phone_number:  String;  Must be in E.164 format (mandatory)**
+**"destination_phone_number":  String;  Must be in E.164 format (mandatory)**
 
-**source_phone_number: String;  Must be in E.164 format (mandatory)**
+**"source_phone_number": String;  Must be in E.164 format (mandatory)**
+
+**Response Example:**
+
+`{
+    "response": {
+        "id": "ae7b2060-4d03-11ea-833c-02e199f7f6f5",
+        "status": "PEN",
+        "amount": 55,
+        "currency_code": "USD",
+        "destination_phone_number": "+972542085469",
+        "transfer_response_at": 0,
+        "created_at": 1581448879,
+        "metadata": {
+            "merchant_defined": true
+        },
+        "response_metadata": {}
+    }
+}`
 
 
 # Cancel/Accept/Decline Transfer API-
@@ -120,12 +138,12 @@ Body Params:
 
 Body Params: 
 
-**id: String; this is the ID you get from `/api/v1/funds/transfer` response (mandatory)**
+**"id": String; this is the ID you get from `/api/v1/funds/transfer` API response (mandatory)**
 
-**status: String; you can choose only between those 3 options**
+**"status": String; you can only choose between these 3 options:**
 `"status":"accept" , "status":"decline" , "status":"cancel"` 
 
-**Response example:** 
+**Response Example:** 
 
 `{
     "response": {
